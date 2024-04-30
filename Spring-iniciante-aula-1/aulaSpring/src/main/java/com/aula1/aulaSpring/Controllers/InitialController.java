@@ -1,6 +1,8 @@
 package com.aula1.aulaSpring.Controllers;
 
 import com.aula1.aulaSpring.DTO.UserDTO;
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -8,6 +10,17 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/initial")
 public class InitialController {
+
+    @PostConstruct
+    private void init() {
+        System.out.println("Inicializando");
+    }
+
+    @PreDestroy
+    private void destroy() {
+        System.out.println("Finalizando");
+    }
+
     @GetMapping
     public String hello() {
         return "Hello";

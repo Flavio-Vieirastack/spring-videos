@@ -1,3 +1,7 @@
 spring:
   application:
     name: aula-1
+
+sdk-key:
+  id: Qualquer coisa
+  api-key: minha-key

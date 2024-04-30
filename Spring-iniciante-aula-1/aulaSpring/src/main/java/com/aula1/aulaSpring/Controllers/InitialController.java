@@ -1,8 +1,10 @@
 package com.aula1.aulaSpring.Controllers;
 
+import com.aula1.aulaSpring.Configs.ApplicationConfig;
 import com.aula1.aulaSpring.DTO.UserDTO;
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -11,9 +13,14 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/initial")
 public class InitialController {
 
+    @Autowired
+    private ApplicationConfig applicationConfig;
+
     @PostConstruct
     private void init() {
         System.out.println("Inicializando");
+        System.out.println(applicationConfig.getId());
+        System.out.println(applicationConfig.getApiKey());
     }
 
     @PreDestroy

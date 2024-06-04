@@ -20,14 +20,12 @@ public class UserModel extends ModelsId {
     private String name;
     @Column(columnDefinition = "varchar (100) not null")
     private String email;
-    @OneToMany(orphanRemoval = true) //Serve para remover a entidade filha quando a
-    // entidade pai é removida
+    @OneToMany(orphanRemoval = true)
     @JoinColumn(name = "user_id", foreignKey = @ForeignKey(
             name = "fk_roles"
     ))
     private Set<Roles> roles = new HashSet<>();
-    @OneToMany(orphanRemoval = true) //Serve para remover a entidade filha quando a
-    // entidade pai é removida
+    @OneToMany(orphanRemoval = true)
     @JoinColumn(name = "user_product_id", foreignKey = @ForeignKey(
             name = "fk_products"
     ))

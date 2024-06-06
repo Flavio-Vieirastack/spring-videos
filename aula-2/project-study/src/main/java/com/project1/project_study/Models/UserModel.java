@@ -26,7 +26,7 @@ public class UserModel extends ModelsId {
     ))
     private Set<Roles> roles = new HashSet<>();
     @OneToMany(orphanRemoval = true)
-    @JoinColumn(name = "user_product_id", foreignKey = @ForeignKey(
+    @JoinColumn(name = "user_id", foreignKey = @ForeignKey(
             name = "fk_products"
     ))
     private Set<Products> products = new HashSet<>();
